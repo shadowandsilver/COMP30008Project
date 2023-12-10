@@ -1,0 +1,34 @@
+
+The whole system is followed by the rule of 3NF. 
+
+Members: All attributes are depends on the PK, there is no transitive dependency.
+
+Member_Achievement: Achievement depends on the PK, there is only one attruibute with one PK/FK.
+
+Health_Data: The Health_Data is a table that contain member's data of their body with no transitive dependency and one PK, so it is 3NF. 
+
+Coaches: The attributes of Coaches are all information about the coach with no transitive dependency and one PK, so it is 3NF. 
+
+Group_Lesson: The attributes of Group_Lesson are all information about the group lesson with no transitive dependency and one PK, so it is 3NF. 
+
+Other_Actives: The attributes of Other_Actives are all information about any other activities with no transitive dependency and one PK, so it is 3NF. 
+
+Rooms: The Rooms only includes the information of rooms with no transitive dependency and one PK, so it is 3NF. 
+
+Instruments: The Instruments only includes the information of instruments with no transitive dependency and one PK, so it is 3NF. 
+
+Registration_Group_Lesson: contians FK, but they all related to PK. Fee and fee_status are related to both member and group lesson, but it is uniquely shows the information about "member registrate the group lesson" but not one of them, so it is still 3NF.
+
+Registration_Others_Lesson: contians FK, but they all related to PK. There also no transitive dependency. Fee and fee_status are related to both member and other activities, but it is uniquely shows the information about "member registrate other activities" but not one of them, so it is still 3NF.
+
+Take_Group_Lesson: It follows the rule of 2NF because all attruibute are  full functional dependency. Also, there are no transitive dependency, so it is 3NF.
+
+Take_Others_Lesson: It follows the rule of 2NF because all attruibute are  full functional dependency. Also, there are no transitive dependency, so it is 3NF.
+
+Registration_Private_Lesson: contians FK, but they all related to PK. There also no transitive dependency. Fee and fee_status are related to both member and coach, but it is uniquely shows the information about "member registrate private lesson" but not one of them, so it is still 3NF.
+
+Apply_Group_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
+
+Apply_Others_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
+
+Install_Instruments: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
