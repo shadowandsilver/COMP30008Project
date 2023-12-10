@@ -1,0 +1,58 @@
+-- 查询所有会员信息
+SELECT * 
+FROM members;
+
+-- 查询所有报名私教课的会员信息
+SELECT * 
+FROM members m
+WHERE m.member_id IN (SELECT r.member_id
+			FROM Registration_Private_Lesson r);
+
+-- 2号会员注册的其他活动
+SELECT * 
+FROM Registration_Others_Lesson rol
+WHERE rol.member_id IN (SELECT m.member_id
+			FROM members m WHERE m.member_id = 2);
+
+-- 查询教练Chris Talor的团体课的课表
+SELECT * 
+FROM Take_Group_Lesson tgl
+WHERE tgl.coach_id IN (SELECT c.coach_id
+			FROM Coaches c WHERE c.first_name = 'Anna' AND c.last_name = 'Davis');
+
+-- 查询入职时间早于'2020-01-15'年的教练信息
+SELECT * 
+FROM Coaches
+WHERE join_date < '2020-01-15';
+
+-- 查询所有已经安装在房间并且检修日期早于’2023-3-1‘的器械
+SELECT * 
+FROM instruments i
+WHERE i.instrument_id IN (SELECT ii.instruments_id
+			FROM Install_Instruments ii) AND last_check_date < '2023-3-1';
+
+-- 更新检查日期
+UPDATE instruments
+SET last_check_date = '2023-12-10'
+WHERE last_check_date < '2023-3-1';
+
+-- 添加新的会员
+INSERT INTO Members (first_name, last_name, loyalty_point, Personal_goal, Exercise_routines, email, phone)
+VALUES 
+('Ethan', 'Wang', 0, 'General fitness', 'Mixed routines', 'ethan.wamg@example.com', '123-666-7895');
+
+--查早所有私教课为缴学费的会员信息
+FROM members m
+WHERE m.member_id IN (SELECT rpl.member_id
+			FROM Registration_Private_Lesson rpl WHERE rpl.fee_status = 0);
+
+--查早所有价格超过10刀的团体课的信息，降序显示
+SELECT *
+FROM Group_Lesson g
+WHERE g.price > 10
+ORDER BY g.price DESC;
+
+-- 查询所有教室信息
+SELECT *
+FROM rooms;
+
