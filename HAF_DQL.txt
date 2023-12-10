@@ -42,6 +42,7 @@ VALUES
 ('Ethan', 'Wang', 0, 'General fitness', 'Mixed routines', 'ethan.wamg@example.com', '123-666-7895');
 
 --check every members' information who paied for private lesson fee
+SELECT *
 FROM members m
 WHERE m.member_id IN (SELECT rpl.member_id
 			FROM Registration_Private_Lesson rpl WHERE rpl.fee_status = 0);
