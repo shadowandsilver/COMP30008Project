@@ -1,0 +1,172 @@
+-- 会员表
+CREATE TABLE Members(
+	member_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(225) NOT NULL,
+	last_name VARCHAR(225) NOT NULL,
+	loyalty_point INT,
+	Personal_goal TEXT,
+	Exercise_routines TEXT,
+	email  VARCHAR(255) UNIQUE NOT NULL,
+	phone  VARCHAR(15)
+	
+);
+
+-- 健康数据
+CREATE TABLE Health_Data(
+	member_id INT,
+	FOREIGN KEY (member_id) REFERENCES Members,
+	height NUMERIC(8,2),
+	weight NUMERIC(8,2),
+	BMI NUMERIC(8,2),
+	sex VARCHAR(4),
+	age NUMERIC(8,2)
+);
+
+
+--个人成就
+CREATE TABLE Member_Achievement(
+	member_id INT,
+	FOREIGN KEY (member_id) REFERENCES Members,
+	Achievemnet TEXT
+);
+
+-- 教练表
+CREATE TABLE Coaches(
+	coach_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(225) NOT NULL,
+	last_name VARCHAR(225) NOT NULL,
+	sex  VARCHAR(15),
+	join_date DATE,
+	email  VARCHAR(255) UNIQUE NOT NULL,
+	phone  VARCHAR(15)
+);
+
+
+-- 团体课程
+CREATE TABLE Group_Lesson(
+	group_lesson_id SERIAL PRIMARY KEY,
+	group_lesson_name VARCHAR(225) NOT NULL,
+	description TEXT,
+	duration INT,
+	max_numbers INT,
+	price NUMERIC(8,2),
+	start_date DATE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 会议和其他
+CREATE TABLE Other_Actives(
+	others_id SERIAL PRIMARY KEY,
+	others_name VARCHAR(225) NOT NULL,
+	description TEXT,
+	duration INT,
+	max_numbers INT,
+	price NUMERIC(8,2),
+	date DATE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 房间表： 0代表空
+CREATE TABLE Rooms(
+	room_id SERIAL PRIMARY KEY,
+	room_number INT NOT NULL,
+	status INT CHECK(status = 0 or status = 1)
+);
+
+-- 器械表
+CREATE TABLE Instruments(
+	instrument_id SERIAL PRIMARY KEY,
+	instrument_name VARCHAR(225) NOT NULL,
+	purchase_date DATE,
+	last_check_date DATE
+);
+
+
+
+
+
+
+
+
+
+
+-- 注册大课表
+CREATE TABLE Registration_Group_Lesson(
+	registration_group_lesson_id SERIAL PRIMARY KEY,
+	member_id INT,
+	group_lesson_id INT,
+	price NUMERIC(8,2),
+	fee_status INT CHECK(fee_status = 0 or fee_status = 1),
+	FOREIGN KEY (member_id) REFERENCES Members,
+	FOREIGN KEY (group_lesson_id) REFERENCES Group_Lesson
+);
+
+-- 注册其他和会议表
+CREATE TABLE Registration_Others_Lesson(
+	registration_others_lesson_id SERIAL PRIMARY KEY,
+	member_id INT,
+	others_id INT,
+	price NUMERIC(8,2),
+	fee_status INT CHECK(fee_status = 0 or fee_status = 1),
+	FOREIGN KEY (member_id) REFERENCES Members,
+	FOREIGN KEY (others_id) REFERENCES Other_Actives
+);
+
+
+
+-- 团体课接单表
+CREATE TABLE Take_Group_Lesson(
+	take_group_lesson_id SERIAL PRIMARY KEY,
+	coach_id INT,
+	group_lesson_id INT,
+	FOREIGN KEY (coach_id) REFERENCES Coaches,
+	FOREIGN KEY (group_lesson_id) REFERENCES Group_Lesson
+);
+
+-- 注册其他和会议接单表
+CREATE TABLE Take_Others_Lesson(
+	take_others_lesson_id SERIAL PRIMARY KEY,
+	coach_id INT,
+	others_id INT,
+	FOREIGN KEY (coach_id) REFERENCES Coaches,
+	FOREIGN KEY (others_id) REFERENCES Other_Actives
+);
+
+
+-- 私教课表
+CREATE TABLE Registration_Private_Lesson(
+	registration_private_lesson_id SERIAL PRIMARY KEY,
+	member_id INT,
+	coach_id INT,
+	price NUMERIC(8,2),
+	fee_status INT CHECK(fee_status = 0 or fee_status = 1),
+	FOREIGN KEY (member_id) REFERENCES Members,
+	FOREIGN KEY (coach_id) REFERENCES Coaches
+);
+
+
+
+--申请团体课房间
+CREATE TABLE Apply_Group_Rooms(
+	group_lesson_id INT,
+	rooms_id INT,
+	FOREIGN KEY (group_lesson_id) REFERENCES Group_Lesson,
+	FOREIGN KEY (rooms_id) REFERENCES Rooms
+);
+
+--申请其他活动房间
+CREATE TABLE Apply_Others_Rooms(
+	others_id INT,
+	rooms_id INT,
+	FOREIGN KEY (others_id) REFERENCES Other_Actives,
+	FOREIGN KEY (rooms_id) REFERENCES Rooms
+);
+
+--安装器械
+CREATE TABLE Install_Instruments(
+	instruments_id INT,
+	rooms_id INT,
+	FOREIGN KEY (instruments_id) REFERENCES Instruments,
+	FOREIGN KEY (rooms_id) REFERENCES Rooms
+);
+
+
+
