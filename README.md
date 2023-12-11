@@ -31,12 +31,15 @@ response: Carol Zhao
 DDL File: 
 HAF_DDL.txt
 response: Yanweisu
+HAF_InSERT.txt
+response: Yanweisu, Carol Zhao
 
 SQL File:
 HAF_SQL.txt
 response: Yanweisu
-HAF_InSERT.txt
-response: Yanweisu, Carol Zhao
+
+HealthandFitnessDB.sql (The Final version of SQL, can be directly used)
+response: Yanweisu
 
 JAVA code implement:
 A4JDBC.zip
