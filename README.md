@@ -31,7 +31,7 @@ response: Carol Zhao
 DDL File and SQL Statements: 
 HAF_DDL.txt
 response: Yanweisu
-HAF_DQL.txt
+HAF_SQL.txt
 response: Yanweisu
 HAF_InSERT.txt
 response: Yanweisu, Carol Zhao
