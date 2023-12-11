@@ -42,9 +42,12 @@ The full dependence is registration_private_lesson_id → member_id,coach_id ,Fe
 
 Apply_Group_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
 The full dependence is Apply_Group(group_lesson_id, rooms_id)
+group_lesson_id, rooms_id are PK and FK
 
 Apply_Others_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
 The full dependence is Apply_Others_Rooms(others_id, rooms_id)
+others_id, rooms_id are PK and FK
 
 Install_Instruments: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
 The full dependence is Install_Instruments(instruments_id, rooms_id)
+instruments_id, rooms_id are PK and FK
