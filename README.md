@@ -42,3 +42,6 @@ JAVA code implement:
 A4JDBC.zip
 response: Yanweisu
 The operation of Administrative staff is included in the JDBC
+
+Extension:
+HAF_INSERT.txt is a part of DDL, its for inputting the data, but we sepreated them
