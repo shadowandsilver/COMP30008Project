@@ -12,15 +12,15 @@ YouTube Link: https://youtu.be/qBtDcgcvTOM
 
 Files:
 
-Quality and clarity of the ER-diagram: 
+ER-diagram: 
 3005 project ER
 response: Carol Zhao
 
-Assumptions and explanations:
+Assumptions and explanations of ER Diagram:
 HAF_concept.txt
 response: Carol Zhao
 
-Normalization and Functional Dependencies:
+Normalization and Functional Dependencies explanation:
 HAF_normolization.txt
 response: Carol Zhao
 
@@ -28,15 +28,17 @@ Database Schema Diagram:
 Database Schema Diagram.jpeg
 response: Carol Zhao
 
-DDL File and SQL Statements: 
+DDL File: 
 HAF_DDL.txt
 response: Yanweisu
+
+SQL File:
 HAF_SQL.txt
 response: Yanweisu
 HAF_InSERT.txt
 response: Yanweisu, Carol Zhao
 
-JAVA code implement
+JAVA code implement:
 A4JDBC.zip
 response: Yanweisu
 The operation of Administrative staff is included in the JDBC
