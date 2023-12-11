@@ -117,7 +117,6 @@ CREATE TABLE Take_Others_Lesson(
 	FOREIGN KEY (others_id) REFERENCES Other_Actives
 );
 
-
 -- register private lesson
 CREATE TABLE Registration_Private_Lesson(
 	registration_private_lesson_id SERIAL PRIMARY KEY,
@@ -128,8 +127,6 @@ CREATE TABLE Registration_Private_Lesson(
 	FOREIGN KEY (member_id) REFERENCES Members,
 	FOREIGN KEY (coach_id) REFERENCES Coaches
 );
-
-
 
 --apply room for group lesson
 CREATE TABLE Apply_Group_Rooms(
