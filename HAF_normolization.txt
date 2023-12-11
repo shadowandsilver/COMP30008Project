@@ -2,33 +2,49 @@
 The whole system is followed by the rule of 3NF. 
 
 Members: All attributes are depends on the PK, there is no transitive dependency.
+The full dependence is member_id → first_name,last_name,loyalty_point,Personal_goal,Exercise_routines,email,phone
 
 Member_Achievement: Achievement depends on the PK, there is only one attruibute with one PK/FK.
+The full dependence is member_id → height,weight,BMI,sex,age
 
 Health_Data: The Health_Data is a table that contain member's data of their body with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is member_id → Achievemnet
 
 Coaches: The attributes of Coaches are all information about the coach with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is coach_id → first_name,last_name,sex,join_date,email,phone
 
 Group_Lesson: The attributes of Group_Lesson are all information about the group lesson with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is group_lesson_id → group_lesson_name,description,duration,max_numbers,price,start_date
 
 Other_Actives: The attributes of Other_Actives are all information about any other activities with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is others_id → others_name,description,duration,max_numbers,price,date
 
 Rooms: The Rooms only includes the information of rooms with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is room_id → room_number,status
 
 Instruments: The Instruments only includes the information of instruments with no transitive dependency and one PK, so it is 3NF. 
+The full dependence is instrument_id → instrument_name,purchase_date, last_check_date
 
 Registration_Group_Lesson: contians FK, but they all related to PK. Fee and fee_status are related to both member and group lesson, but it is uniquely shows the information about "member registrate the group lesson" but not one of them, so it is still 3NF.
+The full dependence is instrument_id → instrument_name,purchase_date, last_check_date
 
 Registration_Others_Lesson: contians FK, but they all related to PK. There also no transitive dependency. Fee and fee_status are related to both member and other activities, but it is uniquely shows the information about "member registrate other activities" but not one of them, so it is still 3NF.
+The full dependence is registration_group_lesson_id → member_id,group_lesson_id ,Fee,fee_status
 
 Take_Group_Lesson: It follows the rule of 2NF because all attruibute are  full functional dependency. Also, there are no transitive dependency, so it is 3NF.
+The full dependence is take_group_lesson_id → coach_id,group_lesson_id
 
 Take_Others_Lesson: It follows the rule of 2NF because all attruibute are  full functional dependency. Also, there are no transitive dependency, so it is 3NF.
+The full dependence is take_others_lesson_id → coach_id, others_id
 
 Registration_Private_Lesson: contians FK, but they all related to PK. There also no transitive dependency. Fee and fee_status are related to both member and coach, but it is uniquely shows the information about "member registrate private lesson" but not one of them, so it is still 3NF.
+The full dependence is registration_private_lesson_id → member_id,coach_id ,Fee,fee_status
 
 Apply_Group_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
+The full dependence is Apply_Group(group_lesson_id, rooms_id)
 
 Apply_Others_Rooms: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
+The full dependence is Apply_Others_Rooms(others_id, rooms_id)
 
 Install_Instruments: It uses FK as PK with no other attruibutes, so it is full functional dependency with no transitive dependency. It is 3NF.
+The full dependence is Install_Instruments(instruments_id, rooms_id)
