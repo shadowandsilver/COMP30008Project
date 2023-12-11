@@ -8,6 +8,8 @@ Yanweisu
 Carol Zhao
 101179166
 
+YouTube Link: https://youtu.be/qBtDcgcvTOM
+
 Files:
 
 Quality and clarity of the ER-diagram: 
