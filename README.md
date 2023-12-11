@@ -46,7 +46,8 @@ A4JDBC.zip
 postgresql-42.7.0.jar
 response: Yanweisu
 The operation of Administrative staff is included in the JDBC
-* Added something more than video demo, please try it by yourself!
+* By utilizing the extension, we added something more than video demo, please try it by yourself!
+* Go to main.java and run the program, and guide by the lines.
 
 Extension:
 HAF_INSERT.txt is a part of DDL, its for inputting the data, but we sepreated them
