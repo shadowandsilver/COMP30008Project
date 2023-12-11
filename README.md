@@ -48,8 +48,7 @@ response: Yanweisu
 The operation of Administrative staff is included in the JDBC
 * By utilizing the extension, we added something more than video demo, please try it by yourself!
 * Go to main.java and run the program, and guide by the lines.
-* For this one, you can also create a database with DDL we have.
-* You could also create a new database (the name of the database must be HealthandFitnessDB or change the URL of the code), create a new table using the contents of the HAF_DDL.txt file, and using the contents of the HAF_INSERT.file.
+* You could also create a new database (the name of the database must be HealthandFitnessDB or change the URL of the code), create a new table using the contents of the HAF_DDL.txt file, and using the contents of the HAF_INSERT.file. But in this way, you need to pay attension to your username, database and password.
 
 Extension:
 HAF_INSERT.txt is a part of DDL, its for inputting the data, but we sepreated them
