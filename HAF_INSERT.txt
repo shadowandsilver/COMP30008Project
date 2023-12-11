@@ -70,8 +70,6 @@ VALUES
 ('Elliptical Trainer', '2021-12-15', '2023-05-30');
 
 
-
-
 INSERT INTO Registration_Group_Lesson (member_id, group_lesson_id, price, fee_status)
 VALUES 
 ('1', '1', '15.00', '1'),
